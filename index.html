@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>รู้ทันข่าวปลอม ก่อนกดแชร์</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--surf:#F1F4F8;--ink:#141B2D;--mute:#5B6783;--line:#DDE3EC;--red:#E4472B;--yel:#F2B134;--teal:#1F8A7A;--hero:#141B2D;--ok:#E3F4F0;--no:#FDE9E5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1424;--surf:#1a2238;--ink:#EEF2FA;--mute:#9AA6C0;--line:#2B3550;--hero:#070b16;--ok:#12332e;--no:#3a1d19;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1424;--surf:#1a2238;--ink:#EEF2FA;--mute:#9AA6C0;--line:#2B3550;--hero:#070b16;--ok:#12332e;--no:#3a1d19;color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px);scroll-behavior:smooth}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 "Noto Sans Thai",Tahoma,"Leelawadee UI",sans-serif}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;padding:8px 12px}
+nav button{flex:none;border:0;background:none;color:var(--ink);font:600 14px inherit;font-family:inherit;padding:8px 14px;border-radius:99px;cursor:pointer}
+nav button:hover{background:var(--surf)}
+.hero{background:var(--hero);color:#fff;padding:48px 20px 56px}
+.wrap{max-width:760px;margin:0 auto}
+.kick{color:var(--yel);font-weight:600;letter-spacing:.2em;font-size:12px}
+h1{font-size:clamp(34px,8vw,56px);line-height:1.2;margin:8px 0 12px;font-weight:800}
+.sub{color:#C9D2E3;margin:0 0 6px}
+.chip{display:inline-block;margin-top:18px;padding:6px 14px;border-radius:99px;background:#2B3550;font-size:14px}
+.phone{margin:28px 0 0;background:#2B3550;border-radius:26px;padding:14px;max-width:300px}
+.bub{background:#fff;color:#141B2D;border-radius:16px;padding:14px;font-weight:600}
+.bub small{display:block;color:var(--red);font-weight:400;margin-top:6px}
+#sh{margin-top:12px;width:100%;border:0;border-radius:99px;background:var(--red);color:#fff;font:800 16px inherit;font-family:inherit;padding:12px;cursor:pointer}
+#shm{min-height:26px;margin:10px 4px 0;color:var(--yel);font-weight:600}
+@keyframes sk{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.shake{animation:sk .3s}
+section{padding:44px 20px}
+section:nth-of-type(even){background:var(--surf)}
+h2{font-size:28px;margin:0 0 6px;line-height:1.3}
+.lead{color:var(--mute);margin:0 0 20px}
+details{background:var(--bg);border:1px solid var(--line);border-radius:14px;margin:0 0 10px;padding:0 16px}
+summary{cursor:pointer;font-weight:600;padding:14px 0;list-style:none;display:flex;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+.n{flex:none;width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:800}
+details p{margin:0 0 14px;color:var(--mute)}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:22px}
+.tag{display:inline-block;font-size:13px;font-weight:600;color:var(--mute);margin-bottom:6px}
+.news{font-size:19px;font-weight:600;margin:0 0 16px}
+.opts{display:grid;gap:8px}
+.opts button,.go{font:600 16px inherit;font-family:inherit;text-align:left;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:12px 14px;border-radius:12px;cursor:pointer}
+.opts button:hover:not(:disabled){border-color:var(--ink)}
+.opts button.ok{background:var(--ok);border-color:var(--teal)}
+.opts button.no{background:var(--no);border-color:var(--red)}
+.go{background:var(--ink);color:var(--bg);text-align:center;margin-top:14px;border:0}
+.fb{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--surf)}
+.bar{height:6px;background:var(--line);border-radius:9px;margin-bottom:16px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--teal);width:0;transition:width .3s}
+.big{font-size:44px;font-weight:800;margin:0}
+footer{padding:36px 20px 48px;background:var(--hero);color:#C9D2E3;font-size:14px}
+footer b{color:#fff}
+footer a{color:var(--yel)}
+</style>
+</head>
+<body>
+<nav aria-label="เมนู">
+<button data-t="top">หน้าแรก</button><button data-t="learn">รู้จักข่าวปลอม</button><button data-t="steps">เช็ก 5 ขั้น</button><button data-t="sort">ฝึกจัดหมวด</button><button data-t="quiz">แบบทดสอบ</button><button data-t="src">วิธีใช้สื่อ</button>
+</nav>
+
+<header class="hero" id="top"><div class="wrap">
+<div class="kick">DIGITAL LITERACY</div>
+<h1>รู้ทันข่าวปลอม<br>ก่อนกดแชร์</h1>
+<p class="sub">คิดก่อนเชื่อ • เช็กก่อนแชร์ • รับผิดชอบต่อข้อมูล</p>
+<p class="sub">วิชาเทคโนโลยี (วิทยาการคำนวณ) ชั้น ม.4–ม.6</p>
+<span class="chip">จัดทำโดย 6942411927 ปุญญพัฒน์ วงศ์สถิตย์</span>
+<div class="phone" id="ph"><div class="bub">ด่วน!! พรุ่งนี้หยุดทุกโรงเรียน แชร์ให้ทุกคนรู้ก่อนสาย<small>ส่งต่อหลายครั้ง</small></div>
+<button id="sh">แชร์เลย</button><div id="shm" aria-live="polite">ลองกดดูสิ</div></div>
+</div></header>
+
+<section id="learn"><div class="wrap">
+<h2>ข่าวปลอมคืออะไร</h2>
+<p class="lead">ข้อมูลที่สร้างหรือเผยแพร่ให้ผู้รับสารเข้าใจผิด อาจเป็นข้อความเท็จ ภาพที่ไม่ตรงกับเหตุการณ์ หรือเล่าไม่ครบจนขาดบริบทสำคัญ ข่าวที่น่าตกใจหรือมีคนแชร์เยอะ ไม่ได้แปลว่าเป็นข่าวจริง</p>
+<h2 style="font-size:22px">4 สัญญาณเตือน <span style="font-weight:400;font-size:15px;color:var(--mute)">(แตะเพื่อดูตัวอย่าง)</span></h2>
+<details><summary><span class="n">1</span>พาดหัวเร้าอารมณ์</summary><p>ใช้คำสุดโต่งเพื่อให้ตกใจ เช่น “ด่วนที่สุด!” หรือ “ห้ามบอกใคร!”</p></details>
+<details><summary><span class="n">2</span>ไม่บอกแหล่งที่มา</summary><p>ไม่มีผู้เขียน หน่วยงานอ้างอิง หรือลิงก์หลักฐาน ให้ถามก่อนว่า “ใครเป็นคนบอก”</p></details>
+<details><summary><span class="n">3</span>วันที่หรือภาพผิดบริบท</summary><p>ภาพเก่าอาจถูกนำมาใช้ประกอบเหตุการณ์ใหม่ เช่น ภาพน้ำท่วมเมื่อหลายปีก่อนที่อ้างว่าเกิดเมื่อวาน</p></details>
+<details><summary><span class="n">4</span>เร่งให้แชร์ทันที</summary><p>กดดันให้ส่งต่อก่อนมีเวลาตรวจสอบ เช่น “แชร์ก่อนถูกลบ”</p></details>
+</div></section>
+
+<section id="steps"><div class="wrap">
+<h2>เช็กข่าว 5 ขั้นตอน</h2>
+<p class="lead">ท่องง่ายๆ ก่อนแชร์ทุกครั้ง แตะแต่ละข้อเพื่อดูวิธีทำ</p>
+<details><summary><span class="n">1</span>ดูผู้เผยแพร่</summary><p>เป็นสำนักข่าวหรือหน่วยงานที่ตรวจสอบได้หรือไม่</p></details>
+<details><summary><span class="n">2</span>อ่านให้ครบ</summary><p>อย่าตัดสินจากพาดหัวหรือข้อความบางส่วน</p></details>
+<details><summary><span class="n">3</span>เช็กวันที่</summary><p>ข้อมูลเก่าหรือภาพเก่าถูกนำมาใช้หรือไม่</p></details>
+<details><summary><span class="n">4</span>หาแหล่งอื่น</summary><p>มีแหล่งข่าวที่น่าเชื่อถือยืนยันตรงกันหรือไม่</p></details>
+<details><summary><span class="n">5</span>ตรวจหลักฐาน</summary><p>ดูเอกสาร แหล่งอ้างอิง และบริบทของภาพ</p></details>
+</div></section>
+
+<section id="sort"><div class="wrap">
+<h2>ฝึกจัดหมวดข่าวจำลอง</h2>
+<p class="lead">ตัดสินจากผู้เผยแพร่ วันที่ หลักฐาน และแหล่งข่าวอื่น ไม่ใช่จากความชอบส่วนตัว (ข่าวทั้งหมดเป็นตัวอย่างสมมติ)</p>
+<div class="card" id="sg"></div>
+</div></section>
+
+<section id="quiz"><div class="wrap">
+<h2>ทดสอบความเข้าใจ</h2>
+<p class="lead">5 ข้อ ตอบถูกอย่างน้อย 4 ข้อถือว่าผ่าน</p>
+<div class="card" id="qg"></div>
+</div></section>
+
+<footer id="src"><div class="wrap">
+<p><b>เป้าหมายการเรียนรู้:</b> อธิบายความหมายและผลกระทบของข่าวปลอม • ระบุสัญญาณเตือนอย่างน้อย 3 ข้อ • อธิบายขั้นตอนตรวจสอบข่าวอย่างน้อย 4 ใน 5 ขั้นตอน</p>
+<p><b>วิธีใช้สื่อ (สำหรับครู):</b> เปิดด้วยปุ่ม “แชร์เลย” ให้นักเรียนทายก่อน → สอนสัญญาณเตือนและ 5 ขั้นตอน → ให้จัดหมวดข่าวทีละข้อ และให้เพื่อนอภิปรายเหตุผล → ทำแบบทดสอบและสรุปความรับผิดชอบก่อนแชร์ ใช้เวลาราว 20 นาที เปิดได้บนโทรศัพท์ แท็บเล็ต และคอมพิวเตอร์</p>
+<p><b>แหล่งอ้างอิง:</b> ศูนย์ต่อต้านข่าวปลอม ประเทศไทย (<a href="https://www.antifakenewscenter.com" target="_blank" rel="noopener">antifakenewscenter.com</a>) • AFP Fact Check (<a href="https://factcheck.afp.com" target="_blank" rel="noopener">factcheck.afp.com</a>) • ฟอนต์ Noto Sans Thai (SIL OFL) ตัวอย่างข่าวและข้อความทั้งหมดผู้จัดทำเขียนขึ้นเอง</p>
+<p style="color:#fff;font-weight:600;margin-bottom:0">จัดทำโดย 6942411927 ปุญญพัฒน์ วงศ์สถิตย์</p>
+</div></footer>
+
+<script>
+document.querySelectorAll("nav button").forEach(function(b){b.onclick=function(){document.getElementById(b.dataset.t).scrollIntoView()}});
+var sh=document.getElementById("sh"),shm=document.getElementById("shm"),ph=document.getElementById("ph"),c=0;
+var msg=["หยุดก่อน! ข้อความนี้มีใครประกาศอย่างเป็นทางการไหม","ยังไม่มีแหล่งที่มา ลองเช็กกับโรงเรียนก่อนนะ","เห็นไหม ปุ่มเดียวส่งต่อถึงคนเป็นร้อยได้เลย"];
+sh.onclick=function(){ph.classList.remove("shake");void ph.offsetWidth;ph.classList.add("shake");shm.textContent=msg[c++%msg.length]};
+
+function quizEngine(el,items,opts){
+  var i=0,score=0;
+  function bar(){return '<div class="bar"><i style="width:'+(i/items.length*100)+'%"></i></div>'}
+  function show(){
+    if(i>=items.length){return done()}
+    var it=items[i];
+    el.innerHTML=bar()+'<span class="tag">'+opts.tag+' '+(i+1)+' / '+items.length+'</span><p class="news">'+it.q+'</p><div class="opts"></div><div id="fb"></div>';
+    var box=el.querySelector(".opts");
+    it.o.forEach(function(t,k){var b=document.createElement("button");b.textContent=t;b.onclick=function(){pick(k,b,box)};box.appendChild(b)});
+  }
+  function pick(k,b,box){
+    var it=items[i],bs=box.children,right=k===it.a;
+    for(var j=0;j<bs.length;j++){bs[j].disabled=true}
+    bs[it.a].classList.add("ok");if(!right){b.classList.add("no")}else{score++}
+    var f=document.getElementById("fb");
+    f.innerHTML='<div class="fb"><b>'+(right?"ถูกต้อง":"ยังไม่ใช่")+'</b> '+it.r+'</div><button class="go" style="width:100%">'+(i+1<items.length?"ข้อต่อไป":"ดูผล")+'</button>';
+    f.querySelector(".go").onclick=function(){i++;show()};
+  }
+  function done(){
+    el.innerHTML=bar()+'<p class="big">'+score+' / '+items.length+'</p><p>'+opts.end(score)+'</p><button class="go" style="width:100%">ทำอีกครั้ง</button>';
+    el.querySelector(".go").onclick=function(){i=0;score=0;show()};
+  }
+  show();
+}
+
+quizEngine(document.getElementById("sg"),[
+{q:"เว็บไซต์ทางการของหน่วยงานอุตุนิยมวิทยาเตือนฝนหนักพรุ่งนี้ ระบุวันที่ล่าสุด พร้อมแผนที่",o:["เชื่อถือได้","ต้องตรวจสอบเพิ่ม","น่าสงสัย"],a:0,r:"มีผู้เผยแพร่ที่ตรวจสอบได้ มีวันที่และหลักฐาน แต่ยังควรเปิดเว็บไซต์ต้นทางเองแทนการเชื่อภาพแคป"},
+{q:"เพจแห่งหนึ่งโพสต์ว่าร้านอาหารใช้วัตถุดิบหมดอายุ ไม่บอกชื่อร้าน ไม่มีวันที่",o:["เชื่อถือได้","ต้องตรวจสอบเพิ่ม","น่าสงสัย"],a:1,r:"เป็นการกล่าวหาที่ไม่มีวันที่ ไม่ระบุร้าน และไม่มีหลักฐาน ต้องหาแหล่งอื่นก่อนตัดสิน"},
+{q:"ด่วน!! ดื่มน้ำมะนาวอุ่นทุกเช้าหายจากโรคร้ายทุกชนิด หมอไม่อยากให้รู้ แชร์ก่อนถูกลบ",o:["เชื่อถือได้","ต้องตรวจสอบเพิ่ม","น่าสงสัย"],a:2,r:"พาดหัวเร้าอารมณ์ อ้างผลเกินจริง ไม่มีแหล่งที่มา และเร่งให้แชร์"},
+{q:"แชตส่งต่อว่า “พรุ่งนี้โรงเรียนหยุดทุกแห่ง ด่วน! แชร์ให้ทุกคน” แต่ไม่มีประกาศจากโรงเรียน",o:["เชื่อถือได้","ต้องตรวจสอบเพิ่ม","น่าสงสัย"],a:2,r:"ไม่มีผู้ประกาศ และเร่งให้ส่งต่อ ให้เช็กกับช่องทางทางการของโรงเรียนก่อน"},
+{q:"คลิปสั้นอ้างว่าเกิดไฟไหม้ห้างเมื่อคืนนี้ ไม่ระบุสถานที่ และยังไม่มีสำนักข่าวใดรายงาน",o:["เชื่อถือได้","ต้องตรวจสอบเพิ่ม","น่าสงสัย"],a:1,r:"ยังตัดสินไม่ได้ว่าเท็จหรือจริง ต้องเช็กสถานที่ วันที่ และหาแหล่งอื่นยืนยัน"},
+{q:"สำนักข่าวรายงานผลกีฬาโรงเรียน ระบุผู้เขียน วันที่ และอ้างอิงประกาศของผู้จัดการแข่งขัน",o:["เชื่อถือได้","ต้องตรวจสอบเพิ่ม","น่าสงสัย"],a:0,r:"มีผู้เขียน วันที่ และแหล่งอ้างอิงชัดเจน"}
+],{tag:"ข่าวที่",end:function(s){return s>=5?"เยี่ยมมาก คุณแยกแยะได้แม่น":"ลองทบทวนสัญญาณเตือนและขั้นตอนตรวจสอบ แล้วฝึกอีกครั้ง"}});
+
+quizEngine(document.getElementById("qg"),[
+{q:"ข่าวที่มีคนแชร์จำนวนมากแปลว่าเป็นข่าวจริงเสมอหรือไม่",o:["จริงเสมอ","ไม่เสมอไป เพราะการแชร์ไม่ใช่หลักฐาน","จริงถ้าเพื่อนเป็นคนแชร์","จริงถ้ามีรูปประกอบ"],a:1,r:"จำนวนคนแชร์บอกความนิยม ไม่ได้บอกว่าข้อมูลถูกต้อง"},
+{q:"หากไม่ทราบแหล่งที่มาของข่าว ควรทำอย่างไร",o:["แชร์ไปก่อนเผื่อเป็นประโยชน์","ตรวจสอบผู้เผยแพร่และหลักฐานก่อน","ถามในกลุ่มแล้วแชร์ต่อ","เชื่อไว้ก่อนเพราะน่ากลัว"],a:1,r:"ยังไม่แชร์จนกว่าจะรู้ว่าใครเป็นผู้เผยแพร่ต้นทาง"},
+{q:"ข้อใดเป็นวิธีตรวจสอบข่าวก่อนแชร์",o:["นับจำนวนไลก์","เปรียบเทียบกับแหล่งข่าวที่น่าเชื่อถืออื่น","ดูว่าตัวหนังสือเป็นสีแดงหรือไม่","เชื่อตามพาดหัว"],a:1,r:"การหาแหล่งอื่นมายืนยันคือหนึ่งใน 5 ขั้นตอนตรวจสอบ"},
+{q:"ข้อใดเป็นสัญญาณเตือนของข่าวที่น่าสงสัย",o:["มีผู้เขียนและวันที่ชัดเจน","อ้างหน่วยงานพร้อมลิงก์","บอกให้ “แชร์ก่อนถูกลบ”","ภาพตรงกับวันที่เกิดเหตุ"],a:2,r:"การเร่งให้ส่งต่อทันทีคือสัญญาณเตือนข้อหนึ่ง"},
+{q:"ข้อใดไม่ใช่หนึ่งใน 5 ขั้นตอนตรวจสอบข่าว",o:["ดูผู้เผยแพร่","เช็กวันที่","หาแหล่งอื่น","ดูว่าใครแชร์มากที่สุด"],a:3,r:"5 ขั้นตอนคือ ดูผู้เผยแพร่ อ่านให้ครบ เช็กวันที่ หาแหล่งอื่น ตรวจหลักฐาน"}
+],{tag:"ข้อ",end:function(s){return s>=4?"ผ่านเกณฑ์ ก่อนแชร์ทุกครั้งอย่าลืมถามตัวเองว่า จริงไหม มีหลักฐานไหม ส่งต่อแล้วกระทบใครหรือไม่":"ยังไม่ผ่านเกณฑ์ ลองกลับไปอ่านสัญญาณเตือนและ 5 ขั้นตอน แล้วทำอีกครั้ง"}});
+</script>
+</body>
+</html>
